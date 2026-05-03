@@ -1,4 +1,83 @@
-html {
-    background-color: black;
-    color: white;
+@layer reset, base, components;
+
+@layer reset {
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        min-height: 100dvh;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        overflow-wrap: break-word;
+        text-wrap: pretty;
+    }
+
+    h1 {
+        text-wrap: balance;
+    }
+
+    ol,
+    ul {
+        list-style: none;
+    }
+}
+
+@layer base {
+    :root {
+        --font-mono: Menlo, Monaco, Consolas, monospace;
+        --main-color: #00d2ff;
+        --bg-color: #0f172a;
+    }
+
+    body {
+        font-family: var(--font-mono);
+        color: var(--main-color);
+        background-color: var(--bg-color);
+        text-align: center;
+    }
+}
+
+@layer components {
+    .visualization-container {
+        display: flex;
+        justify-content: center;
+    }
 }
