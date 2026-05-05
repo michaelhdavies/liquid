@@ -6,15 +6,15 @@ class Liquid {
         this.state = 'idle';
         this.element = null;
     }
-    
+
     create() {
         console.log('CREATING LIQUID ...')
         const main = document.querySelector('main');
         if (!main) return console.error("Main element not found");
-        
+
         this.element = document.createElement('div');
         this.element.className = 'liquid';
-        
+
         main.appendChild(this.element);
         console.log('LIQUID CREATED')
     }
@@ -27,4 +27,4 @@ function init() {
     console.log('LIQUID APPLICATION INITIALIZED');
 }
 
-init();
+window.addEventListener('DOMContentLoaded', init);
