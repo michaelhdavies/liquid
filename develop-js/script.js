@@ -4,26 +4,27 @@ class Liquid {
         this.flows = new Map();
         this.step = 0;
         this.state = 'idle';
-        this.sim = null;
+        this.element = null;
     }
     
-    createSim() {
+    create() {
+        console.log('CREATING LIQUID ...')
         const main = document.querySelector('main');
         if (!main) return console.error("Main element not found");
         
-        this.sim = document.createElement('div');
-        this.sim.id = 'liquid';
+        this.element = document.createElement('div');
+        this.element.className = 'liquid';
         
-        main.appendChild(this.sim);
-        console.log('SIM LIVE')
+        main.appendChild(this.element);
+        console.log('LIQUID CREATED')
     }
 }
 
 function init() {
-    console.log('INIT LIQUID');
+    console.log('INITIALIZING LIQUID APPLICATION ...');
     const liquid = new Liquid();
-    liquid.createSim();
-    console.log('LIQUID LIVE');
+    liquid.create();
+    console.log('LIQUID APPLICATION INITIALIZED');
 }
 
 init();
