@@ -73,6 +73,12 @@
         background-color: var(--bg-color);
         text-align: center;
     }
+
+    #liquid {
+        background-color: white;
+        width: 50vh;
+        height: 50vh;
+    }
 }
 
 @layer components {
